@@ -1,63 +1,96 @@
+
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Number Guesser</title>
-	</head>
+ <title>Number Guesser</title>
+ <link rel="stylesheet" type="text/css" href="styles2.css">
+ <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700," rel="stylesheet">
+ <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
 <body>
-	<header>
-		<h1><span>NUMBER</span>GUESSER</h1>
-		<p>ULTIMATE CHALLENGER EDITION</p>
-	</header>
-<div class="set-range">
-	<h3>Set Range</h3>
-	<form class="min-range">
-		<section>
-			<label>Min Range</label>
-				<input type="text">
-		</section>
-	</form>
-	<form>
-		<section>
-			<label>Max Range</label>
-				<iput type="text">
-		</section>
-	</form>
-	<button class="update" type="submit">UPDATE</button>
-	<div class="challengers">
-		<p>The Current Range is 1 to 100</p>
-		<form name="challenger-1">
-			<section>
-				<label>Name</label>
-				<input type="text">
-			</section>
-			<section>
-				<label>Guess</label>
-				<input type="number">
-			</section>
-		</form>
-		<form name="challenger-2">
-			<section>
-				<label>Name</label>
-				<input type="text">
-			</section>
-			<section>
-				<label>Guess</label>
-				<input type="number">
-			</section>
-		</form>
-		<button type="submit" class="submit-guess">SUBMIT GUESS</button>
-		<button type="submit" class="reset-game">RESET GAME</button>
-		<button type="sumbit" class="clear-game">CLEAR GAME</button>
-	</div>
-	<div class="latest-score">
-		<!-- <section class="player-1-guess">
-			<p>Challenger 1 Name</p>
-			<p>current guess</p> -->
-	</div>
-	<div class="results">
-		
-	</div>
-
+<header>
+ <h1><span class="num">NUMBER</span>GUESSER</h1>
+ <div class="head-para">
+   <div class= "sideline"></div>
+     <h2>ULTIMATE CHALLENGER EDITION</h2>
+   <div class="sideline"></div>
 </div>
+</header>
+ <div class="left-section">
+   <section class="set-range">
+      	<h3 id="section-1-title">Set Range</h3>
+     <form class="ranges">
+      <article class="min">
+      <label>Min Range</label>
+        <input type="text">
+      </article>
+       <article class="max">
+       <label>Max Range</label>
+         <input type="text">
+       </article>
+       <button type="submit" class= "update-btn">UPDATE</button></article>
+     </form>
+   
+   </section>
+   <section class="challengers">
+     <p>The Current Range is 1 to 100</p>
+     <article class="opponent-1">
+       <form name="challenger-1">
+     <legend>Challenger 1</legend>
+          <label>Name</label>
+            <input type="text">
+         </article>
+         <article class= "opponent-1-guess">
+           <label>Guess</label>
+           <input type="number">
+         </article>
+       </form>
+     <legend>Challenger 2</legend>
+       <form name="challenger-2">
+         <article class="opponenet-2">
+          <label>Name</label>
+           <input type="text">
+         </article>
+         <article class= "opponent-2-guess">
+           <label>Guess</label>
+           <input type="number">
+         </article>
+       </form>
+       <article class="buttons">
+           <button type="sumbit" class="submit-guess">SUBMIT GUESS</button>
+           <button type="sumbit" class="reset-game">RESET GAME</button>
+           <button type="sumbit" class="clear-game">CLEAR GAME</button>
+       </article>
+   </section>
+   <section class= "latest-scores">
+           <div class="mini-left-box">
+               <h3>Latest Score</h3>
+               <p>LEFT BOX SHIT</p>
+           </div>
+           <div class="mini-right-box">
+               <p>RIGHT BOX SHIT</p>
+           </div>
+   </section>
+ </div>
+ <div class="right-section">
+   <div class="am-i-right">
+           <h3>BIOTCH</h3>
+           <form class="bullshit">
+               <section class="bruh">
+                   <label>TRUTH</label>
+                   <input type="text">
+               </section>
+           </form>
+           <form>
+           <section class="suck">
+               <label>YOU SUCK</label>
+               <input type="text">
+               <button class="update" type="submit">STILL SUCK</button>
+           </section>
+       </form>
+   </div>
+   </div>
+
+
 </body>
 </html>

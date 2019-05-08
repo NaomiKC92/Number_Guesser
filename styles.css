@@ -1,0 +1,120 @@
+/** { box-sizing: border-box;
+   border: purple 1px solid;*/
+
+/** {
+    font-family: 'Open Sans', sans-serif;
+    
+}
+
+
+html, body {
+    margin: 0;
+    padding: 0;
+ height: 100%;
+}
+
+header {
+background-color: #404041;
+height: 20%;
+
+}
+*/
+/*h1 {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+ color: #dd1972;
+ text-align:center;
+ font-weight: 300;
+ font-size: 75px;
+}
+
+.num {
+ font-weight: 700;
+}
+
+.head-para {
+    display: flex;
+    width: 75%;
+    height: 100px;
+}
+
+.sideline {*/
+ /*   background-color: #ffffff;
+    height: 3px;
+    width: 50%;
+}*/
+
+/*.max {
+   display:inline-block;
+   float:right;
+}
+*/
+/*button.update {
+   /*float:right;*/
+/*}**/
+
+/*.para {
+   margin: 0 0 2em 0;*/
+
+/*}
+
+.head {
+   width:100%;
+   font-size:25px;
+   line-height:0.25;
+   text-align:center;
+   position:relative;
+
+}*/
+
+/*.head span:before,
+.head span:after {
+   content:"";
+   position:absolute;
+   top:51%;
+   width:50%;
+   height: 1px;
+   background-color: white;
+}
+
+.head span:before {
+   margin-left: -50%;
+   text-align:right;
+}*/
+
+/*.color {
+   background-color: #ccc;
+}
+
+.left-side {
+   background-color:Cornsilk;
+   width:50%;
+}
+
+div.set-range {
+   background-color:wheat;
+   height:175px;
+}
+
+label {
+   display:block;
+}
+
+section.min {
+   float:left;
+}
+
+/*.challengers {
+   background-color:lightskyblue;
+}*/
+
+/*.opponent-1 {
+   float:left;
+   background-color:darkseagreen;
+   width:100%;
+}
+
+.opponenet-2 {
+   float:left;
+   width:100%;*/
