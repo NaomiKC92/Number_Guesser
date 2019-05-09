@@ -118,10 +118,7 @@ input {
 	height: 43px;
 	display: flex;
 	flex-direction: column;
-	border-top-right-radius: 20%;
-	border-bottom-right-radius: 20%;
-	border-top-left-radius: 20%;
-	border-bottom-left-radius: 20%;
+	border-radius: 50px;
 	width: 150px;
 	align-items:center;
 	justify-content:center;
