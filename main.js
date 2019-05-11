@@ -8,10 +8,10 @@ var nameTwo 						= document.querySelector('.challenger-2-name');
 var currentGuessNameOne = document.querySelector('.name-1');
 var currentGuessNameTwo = document.querySelector('.name-2');
 var submitGuess 				= document.querySelector('.submit-guess');
-var guess1 							= document.querySelector('.challenger-1-guess');
-var guess2 							= document.querySelector('.challenger-2-guess');
-var play1Score 					= document.querySelector('.play-1-guess');
-var play2Score 					= document.querySelector('.play-2-guess');
+var guessOne 							= document.querySelector('.challenger-1-guess');
+var guessTwo							= document.querySelector('.challenger-2-guess');
+var playOneScore 					= document.querySelector('.play-1-guess');
+var playTwoScore 					= document.querySelector('.play-2-guess');
 
 var clearButton = document.querySelector('.clear-game');
 
@@ -27,8 +27,8 @@ function showRange (event){
 }
 
 function updateScore() {
-        play1Score.innerText = guess1.value;
-        play2Score.innerText = guess2.value;
+        playOneScore.innerText = guessOne.value;
+        playTwoScore.innerText = guessTwo.value;
     }
 
 function submitAction(e) {
@@ -49,6 +49,10 @@ function clearsAll () {
 	console.log("clearsAll");
 minRange.value="";
 maxRange.value="";
+nameOne.value="";
+nameTwo.value="";
+guessOne.value="";
+guessTwo.value="";
 
 }
 
