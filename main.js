@@ -14,16 +14,28 @@ var playOneScore 					= document.querySelector('.play-1-guess');
 var playTwoScore 					= document.querySelector('.play-2-guess');
 
 var clearButton = document.querySelector('.clear-game');
+var resetButton = document.querySelector('.reset-game');
+var form = document.getElementById('playerForm');
 
-updateButton.addEventListener('click', showRange);
+
+
+
+updateButton.addEventListener('click', generateRange);
 submitGuess.addEventListener('click', submitAction);
 clearButton.addEventListener('click', clearsAll);
+resetButton.addEventListener('click', resetGame);
 
 
-function showRange (event){
+
+function generateRange (event){
 	// event.preventDefault();
   lowestNumber.innerText = minRange.value;
   highestNumber.innerText = maxRange.value;
+
+	var minNum = parseInt(minRange.value);
+	var maxNum = parseInt(maxRange.value);
+
+	generateNum(minNum,maxNum)
 }
 
 function updateScore() {
@@ -38,7 +50,6 @@ function submitAction(e) {
 }
 
 function updateNames (event){
-
 currentGuessNameOne.innerText = nameOne.value;
 currentGuessNameTwo.innerText = nameTwo.value;
 
@@ -47,12 +58,26 @@ currentGuessNameTwo.innerText = nameTwo.value;
 function clearsAll () {
 	// e.preventDefault();
 	console.log("clearsAll");
-minRange.value="";
-maxRange.value="";
-nameOne.value="";
-nameTwo.value="";
-guessOne.value="";
-guessTwo.value="";
+	minRange.value="";
+	maxRange.value="";
+	nameOne.value="";
+	nameTwo.value="";
+	guessOne.value="";
+	guessTwo.value="";
 
 }
 
+function resetGame() {
+	// console.log("sup");
+	form.reset();
+	minRange.value="";
+	maxRange.value="";
+	nameOne.value="";
+	nameTwo.value="";
+	guessOne.value="";
+	guessTwo.value="";
+}
+
+function generateNum (min,max) {
+	console.log(Math.floor(Math.random()* max) + min)
+}
