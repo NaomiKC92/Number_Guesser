@@ -14,11 +14,11 @@ var currentGuessNameTwo = document.querySelector('.name-2');
 
 var submitGuess = document.querySelector('.submit-guess');
 
-var guess1 = document.querySelector('.challenger-1-guess');
-var guess2 = document.querySelector('.challenger-2-guess');
+var guessOne = document.querySelector('.challenger-1-guess');
+var guessTwo = document.querySelector('.challenger-2-guess');
 
-var play1Score = document.querySelector('.play-1-guess');
-var play2Score = document.querySelector('.play-2-guess');
+var playOneScore = document.querySelector('.play-1-guess');
+var playTwoScore = document.querySelector('.play-2-guess');
 
 var resetButton = document.querySelector('.reset-game');
 var clearButton = document.querySelector('.clear-game');
@@ -28,6 +28,7 @@ var form = document.getElementById('playerForm');
 updateButton.addEventListener('click', generateRange);
 clearButton.addEventListener('click', clearsAll);
 submitGuess.addEventListener('click', submitAction);
+resetButton.addEventListener('click', resetGame);
 
 function generateRange(event){
     // event.preventDefault();
@@ -40,10 +41,9 @@ function generateRange(event){
  generateNum(minNum, maxNum);
 }
 
-
 function updateScore() {
-       play1Score.innerText = guess1.value;
-       play2Score.innerText = guess2.value;
+       playOneScore.innerText = guessOne.value;
+       playTwoScore.innerText = guessTwo.value;
    }
 function submitAction(e) {
        e.preventDefault();
@@ -61,7 +61,7 @@ currentGuessNameTwo.innerText = nameTwo.value;
 }
 
 function resetGame(){
-	lowestNumber.innerText = 1;
+  lowestNumber.innerText = 1;
 	highestNumber.innerText = 100;
 	minRange.value = '';
 	maxRange.value = '';
@@ -76,8 +76,6 @@ function resetGame(){
 	generateNum();
 }
 
-resetButton.addEventListener('click', resetGame);
-
 
 function generateNum(min = 1, max = 100) {
 	console.log(Math.floor(Math.random() * max) + min);
@@ -85,7 +83,7 @@ function generateNum(min = 1, max = 100) {
 }
 function clearsAll () {
     // e.preventDefault();
-    console.log("clearsAll");
+    // console.log("clearsAll");
     minRange.value="";
     maxRange.value="";
     nameOne.value="";
