@@ -21,10 +21,12 @@ var play1Score = document.querySelector('.play-1-guess');
 var play2Score = document.querySelector('.play-2-guess');
 
 var resetButton = document.querySelector('.reset-game');
+var clearButton = document.querySelector('.clear-game');
+var form = document.getElementById('playerForm');
 
 
 updateButton.addEventListener('click', generateRange);
-
+clearButton.addEventListener('click', clearsAll);
 submitGuess.addEventListener('click', submitAction);
 
 function generateRange(event){
@@ -80,5 +82,16 @@ resetButton.addEventListener('click', resetGame);
 function generateNum(min = 1, max = 100) {
 	console.log(Math.floor(Math.random() * max) + min);
 	// return Math.floor(Math.random() * max) + min;
+}
+function clearsAll () {
+    // e.preventDefault();
+    console.log("clearsAll");
+    minRange.value="";
+    maxRange.value="";
+    nameOne.value="";
+    nameTwo.value="";
+    guessOne.value="";
+    guessTwo.value="";
+
 }
 
