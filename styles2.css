@@ -41,8 +41,8 @@ h3 {
 	margin-bottom:4px;
 	font-weight:700;
 	font-size:25px;
-
 }
+
 
 button {
 	border-radius: 20px;
@@ -89,9 +89,7 @@ p {
 	padding:10px;
 	border:2px solid #d0d2d3;
 	background-color:#ffffff;
-
 }
-
 
 
 .update-btn {
@@ -99,8 +97,6 @@ p {
 	border-radius:20px;
 	font-size:20px;
 }
-
-
 
 .challengers {
 	display:flex;
@@ -147,6 +143,24 @@ legend {
 
 .play-1-high-low,.play-2-high-low {
 	font-size:25px;
+    
+}
+
+
+
+.total-score {
+    display:flex;
+ justify-content: space-around;
+ padding:5px;
+ text-align:center;
+}
+
+.mini-right-box,
+.mini-left-box {
+    display: flex;
+ flex-direction: column;
+ justify-content: flex-end;
+ flex:1;
 }
 
 .total-score {
@@ -164,21 +178,52 @@ legend {
   flex:1;
 }
 
+.middle-line {
+    display:flex;
+    border:1px solid grey;
+ }
+
+.right-section {
+    display:flex;
+    flex-direction:column;
+    width:50%;
+
+    background-color:#D0D2D3;
+
+}
+
+.vs {
+    font-size: 15px;
+    margin:15px;
+}
+
+.winner-announces {
+    font-size:40px;
+    font-weight:800;
+    margin-top:20px;
+    
+}
 
 .middle-line {
 	display:flex;
 	border:1px solid grey;
 }
 
-.right-section {
-	display:flex;
-	flex-direction:column;
-	width:50%;
 
-	background-color:#D0D2D3;
+.actual-winner {
+    font-size:40px;
+    margin-top:0;
+    margin-bottom: 20px;
+}
+>>>>>>> 9c64d838c51f3014699aca08eaac65a55c7bee2e
 
+.result-names {
+    text-align:center;
+    font-weight:700;
+    margin-bottom:10px;
 }
 
+<<<<<<< HEAD
 .vs {
 	font-size: 15px;
 	margin:15px;
@@ -221,15 +266,39 @@ legend {
 justify-content:space-between;
 	border-top:2px solid grey;
 	padding-top:6px;
+=======
+.winners {
+    margin:19px 19px;
+    background-color: #ffffff;
+    border:2px solid #d0d2d3;
+    padding:10px;
+}
+
+.the-winner {
+    border-top:2px solid grey;
+    text-align:center;
+}
+
+.guess-and-time {
+    display:flex;
+justify-content:space-between;
+    border-top:2px solid grey;
+    padding-top:6px;
+>>>>>>> 9c64d838c51f3014699aca08eaac65a55c7bee2e
 
 }
 
 .number-of-guesses,.time {
+<<<<<<< HEAD
 	font-weight:700;
+=======
+    font-weight:700;
+>>>>>>> 9c64d838c51f3014699aca08eaac65a55c7bee2e
 
 }
 
 @media screen and (max-width: 300px) {
+<<<<<<< HEAD
   header {
     background: magenta;
   }
@@ -237,4 +306,13 @@ justify-content:space-between;
   .left-section {
   	background: blue;
   }
+=======
+ header {
+   background: magenta;
+ }
+
+ .left-section {
+     background: blue;
+ }
+>>>>>>> 9c64d838c51f3014699aca08eaac65a55c7bee2e
 }
