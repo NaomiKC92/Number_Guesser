@@ -62,20 +62,19 @@ function resetGame(){
 	highestNumber.innerText = 100;
 	minRange.value = '';
 	maxRange.value = '';
-	play1Score.innerText = 0;
-	play2Score.innerText = 0;
+	playOneScore.innerText = 0;
+	playTwoScore.innerText = 0;
 	currentGuessNameOne.innerText = 'Challenger 1 Name';
 	currentGuessNameTwo.innerText = 'Challenger 2 Name';
 	nameOne.value = '';
 	nameTwo.value = '';
-	guess1.value = '';
-	guess2.value = ''; 
+	guessOne.value = '';
+	guessTwo.value = ''; 
 	generateNum();
 }
 
 
 function generateNum(min = 1, max = 100) {
-	// console.log(Math.floor(Math.random() * max) + min);
 	return Math.floor(Math.random() * max) + min;
 }
 
@@ -95,21 +94,55 @@ function disableClear() {
   maxRange.value,
   nameOne.value,
   nameTwo.value,
-  guess1.value,
-  guess2.value
+  guessOne.value,
+  guessTwo.value
  ]
- let count = 0;
- for(let i = 0; i < inputFields.length; i++){
-  if (inputFields[i].length !== 0) {
-    count += 1;
+
+
+ for (i = 0; i < inputFields.length; i++){
+  if (inputFields[i] === '') {
+    console.log(inputFields[i])
+    clearButton.disable === true;
+    // else ()
+  } else {
+    clearButton.disable === false;
+  }
+
   }
  }
-  if (count === 6) {
-    //turn "disabled attribute of 'button' to false;
-    // remove disabled css class.
-    console.log('enable reset');
-  }
-}
+
+// if inputFields[i].length !==0 {
+//   this.disabled = false;
+// }
+// else {
+//   this.disabled = true;
+// }
+
+// }
+
+
+
+// function disableClear() {
+//   var inputFields = [
+//   minRange.value,
+//   maxRange.value,
+//   nameOne.value,
+//   nameTwo.value,
+//   guess1.value,
+//   guess2.value
+//  ]
+//  let count = 0;
+//  for(let i = 0; i < inputFields.length; i++){
+//   if (inputFields[i].length !== 0) {
+//     count += 1;
+//   }
+//  }
+//   if (count === 6) {
+//     //turn "disabled attribute of 'button' to false;
+//     // remove disabled css class.
+//     console.log('enable reset');
+//   }
+// }
 
 
 
