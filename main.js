@@ -30,6 +30,9 @@ clearButton.addEventListener('click', clearsAll);
 submitGuess.addEventListener('click', submitAction);
 resetButton.addEventListener('click', resetGame);
 
+clearButton.disabled = true;
+resetButton.disabled = true;
+
 function generateRange() {
  lowestNumber.innerText = minRange.value;
  highestNumber.innerText = maxRange.value;
@@ -46,7 +49,8 @@ function submitAction(e) {
        e.preventDefault();
        updateScore();
        updateNames();
-       disableClear()
+       disableClearBtn();
+       disableResetBtn();
        console.log('Testing');
 }
 
@@ -88,28 +92,35 @@ function clearsAll() {
 
 }
 
-function disableClear() {
-  var inputFields = [
-  minRange.value,
-  maxRange.value,
-  nameOne.value,
-  nameTwo.value,
-  guessOne.value,
-  guessTwo.value
- ]
-
-
- for (i = 0; i < inputFields.length; i++){
-  if (inputFields[i] === '') {
-    console.log(inputFields[i])
-    clearButton.disable === true;
-    // else ()
-  } else {
-    clearButton.disable === false;
+function disableClearBtn(name) {
+  if (name.value === '') {
+      clearButton.disabled = true;
+  } else { clearButton.disabled = false;}
   }
 
+  function disableResetBtn(name) {
+  if (name.value === '') {
+      resetButton.disabled = true;
+  } else { resetButton.disabled = false;}
   }
- }
+
+
+  
+
+
+
+
+
+ // for (i = 0; i < inputFields.length; i++){
+ //  if (inputFields[i] === '') {
+ //    console.log(inputFields[i])
+ //    clearButton.disable === true;
+ //  } else {
+ //    clearButton.disable === false;
+ //  }
+
+ //  }
+ // }
 
 // if inputFields[i].length !==0 {
 //   this.disabled = false;
