@@ -1,94 +1,90 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 <head>
- <title>Number Guesser</title>
- <link rel="stylesheet" type="text/css" href="styles2.css">
- <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700,800" rel="stylesheet">
- <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Number Guesser</title>
+  <link rel="stylesheet" type="text/css" href="styles2.css">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700,800" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
- <header>
-   <h1><span class="num">NUMBER</span>GUESSER</h1>
-   <div class="head-para">
-   <div class= "sideline"></div>
-   <h2>ULTIMATE CHALLENGER EDITION</h2>
-   <div class="sideline"></div>
-   </div>
- </header>
- <main>
- <section class="left-section">
-   <div class="set-range">
-     <h3 id="section-1-title">Set Range</h3>
-     <form class="ranges">
-       <label>Min Range</label>
-       <input type="text" class="min-range-input">
-       <label>Max Range</label>
-       <input type="text" class="max-range-input">
-       <button type="button" class= "update-btn">UPDATE</button>
-     </form>
-   </div>
+  <header>
+    <h1><span class="num">NUMBER</span>GUESSER</h1>
+    <div class="head-para">
+      <div class= "sideline"></div>
+        <h2>ULTIMATE CHALLENGER EDITION</h2>
+      <div class="sideline"></div>
+    </div>
+  </header>
+  <main>
+    <section class="left-section">
+      <div class="set-range">
+        <h3 id="section-1-title">Set Range</h3>
+        <form class="ranges">
+          <label>Min Range<input type="text" class="min-range-input"></label>
+          <label>Max Range<input type="text" class="max-range-input"></label>
+          <button type="button" class= "update-btn">UPDATE</button>
+        </form>
+      </div>
       <section class="challengers">
-     <p>The Current Range is <span class="lowest-number">1</span> to <span class="highest-number">100</span></p>
-     <article class="opponent-1">
-       <form name="challenger-1">
-         <legend>Challenger 1</legend>
-         <label>Name</label>
-         <input type="text" class="challenger-1-name">
-         <label>Guess</label>
-         <input type="number" class="challenger-1-guess">
-       </form>
-     </article>
-       <legend>Challenger 2</legend>
-       <form name="challenger-2">
-         <article class="opponenet-2">
-           <label>Name</label>
-           <input type="text" class="challenger-2-name">
-           <label>Guess</label>
-           <input type="number" class="challenger-2-guess">
-         </article>
-       </form>
-     <article class="buttons">
-       <button type="button" class="submit-guess">SUBMIT GUESS</button>
-       <button type="button" class="reset-game">RESET GAME</button>
-       <button type="button"  disabled="true" class="clear-game">CLEAR GAME</button>
-     </article>
-   </section>
-   <section class="latest-scores">
-     <div class="total-score">
-         <div class="mini-left-box">
-              <h3>Latest Score</h3>
+        <p>The Current Range is <span class="lowest-number">1</span> to <span class="highest-number">100</span></p>
+        <article class="opponent-1">
+          <form name="challenger-1">
+            <legend>Challenger 1</legend>
+            <label>Name</label>
+            <input type="text" class="challenger-1-name">
+            <label>Guess</label>
+            <input type="number" class="challenger-1-guess">
+          </form>
+        </article>
+        <article class="opponenet-2">
+          <form name="challenger-2">
+            <legend>Challenger 2</legend>
+            <label>Name</label>
+            <input type="text" class="challenger-2-name">
+            <label>Guess</label>
+            <input type="number" class="challenger-2-guess">
+          </form>
+        </article>
+        <article class="buttons">
+          <button type="button" class="submit-guess">SUBMIT GUESS</button>
+          <button type="button" class="reset-game">RESET GAME</button>
+          <button type="button" class="clear-game">CLEAR GAME</button>
+        </article>
+      </section>
+      <section class="latest-scores">
+        <div class="total-score">
+          <div class="mini-left-box">
+            <h3>Latest Score</h3>
             <p class="name-1">Challenger 1 Name</p>
             <p>current guess</p>
             <p class="play-1-guess">97</p>
             <p class="play-1-high-low">that's too high</p>
           </div>
-          <div class="middle-line">
-     </div>
-     <div class="mini-right-box">
-       <p class="name-2">Challenger 2 Name</p>
-       <p>current guess</p>
-       <p class="play-2-guess">3</p>
-       <p class="play-2-high-low">that's too low</p>
-     </div>
-   </div>
-     </section>
-</section>
-<div class="right-section">
-  <section class="winners">
-          <p class="result-names"> CHALLENGER 1 NAME <span class="vs">VS</span> CHALLENGER 2 NAME</p>
-          <section class="the-winner">
+          <div class="middle-line"></div>
+          <div class="mini-right-box">
+            <p class="name-2">Challenger 2 Name</p>
+            <p>current guess</p>
+            <p class="play-2-guess">3</p>
+            <p class="play-2-high-low">that's too low</p>
+          </div>
+        </div>
+      </section>
+    </section>
+    <div class="right-section">
+      <section class="winners">
+        <p class="result-names"> CHALLENGER 1 NAME <span class="vs">VS</span> CHALLENGER 2 NAME</p>
+        <section class="the-winner">
           <p class="winner-announces">CHALLENGER 2 NAME</p>
           <p class="actual-winner">WINNER</p>
         </section>
         <section class="guess-and-time">
-            <p><span class="number-of-guesses">47</span> GUESSES</p>
-            <p><span class="time">1.35 MINUTES</span></p>
-            <p>IMG</p>
+          <p><span class="number-of-guesses">47</span> GUESSES</p>
+          <p><span class="time">1.35 MINUTES</span></p>
+          <p>IMG</p>
         </section>
-
-          </section>
- </section>
-    </main>
+      </section>
+    </section>
+  </main>
 <script type="text/javascript" src="main.js"></script>
 </body>
 </html>
