@@ -4,6 +4,7 @@
  <title>Number Guesser</title>
  <link rel="stylesheet" type="text/css" href="styles2.css">
  <link href="https://fonts.googleapis.com/css?family=Open+Sans:100,300,400,600,700,800" rel="stylesheet">
+ <link rel="stylesheet" media="screen and (max-width: 320px)" href="allscreen.css">
  <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
@@ -21,9 +22,9 @@
      <h3 id="section-1-title">Set Range</h3>
      <form class="ranges">
        <label>Min Range</label>
-       <input type="text" class="min-range-input">
+       <input type="number" class="min-range-input">
        <label>Max Range</label>
-       <input type="text" class="max-range-input">
+       <input type="number" class="max-range-input">
        <button type="button" class= "update-btn">UPDATE</button>
      </form>
    </div>
@@ -33,7 +34,7 @@
        <form name="challenger-1">
          <legend>Challenger 1</legend>
          <label>Name</label>
-         <input type="text" class="challenger-1-name">
+         <input type="text" class="challenger-1-name" pattern="[a-zA-Z0-9]+">
          <label>Guess</label>
          <input type="number" class="challenger-1-guess">
        </form>
