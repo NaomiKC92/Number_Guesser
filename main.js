@@ -30,14 +30,11 @@ clearButton.addEventListener('click', clearsAll);
 submitGuess.addEventListener('click', submitAction);
 resetButton.addEventListener('click', resetGame);
 
-function generateRange(event){
-    // event.preventDefault();
+function generateRange() {
  lowestNumber.innerText = minRange.value;
  highestNumber.innerText = maxRange.value;
- // console.log(minRange.value);
  var minNum = parseInt(minRange.value);
  var maxNum = parseInt(maxRange.value);
- console.log(typeof(minNum));
  generateNum(minNum, maxNum);
 }
 
@@ -49,11 +46,11 @@ function submitAction(e) {
        e.preventDefault();
        updateScore();
        updateNames();
-
+       disableClear()
        console.log('Testing');
 }
 
-function updateNames (event){
+function updateNames(event){
 
 currentGuessNameOne.innerText = nameOne.value;
 currentGuessNameTwo.innerText = nameTwo.value;
@@ -78,12 +75,11 @@ function resetGame(){
 
 
 function generateNum(min = 1, max = 100) {
-	console.log(Math.floor(Math.random() * max) + min);
-	// return Math.floor(Math.random() * max) + min;
+	// console.log(Math.floor(Math.random() * max) + min);
+	return Math.floor(Math.random() * max) + min;
 }
-function clearsAll () {
-    // e.preventDefault();
-    // console.log("clearsAll");
+
+function clearsAll() {
     minRange.value="";
     maxRange.value="";
     nameOne.value="";
@@ -92,4 +88,32 @@ function clearsAll () {
     guessTwo.value="";
 
 }
+
+function disableClear() {
+  var inputFields = [
+  minRange.value,
+  maxRange.value,
+  nameOne.value,
+  nameTwo.value,
+  guess1.value,
+  guess2.value
+ ]
+ let count = 0;
+ for(let i = 0; i < inputFields.length; i++){
+  if (inputFields[i].length !== 0) {
+    count += 1;
+  }
+ }
+  if (count === 6) {
+    //turn "disabled attribute of 'button' to false;
+    // remove disabled css class.
+    console.log('enable reset');
+  }
+}
+
+
+
+
+
+
 
