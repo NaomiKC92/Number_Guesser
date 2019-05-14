@@ -24,6 +24,12 @@ var resetButton = document.querySelector('.reset-game');
 var clearButton = document.querySelector('.clear-game');
 var form = document.getElementById('playerForm');
 
+var lowHighResultOne = document.querySelector('.player-1-high-low')
+// var lowHighResultTwo = document.querySelector()
+
+var minNums = 1;
+var maxNums = 100;
+var randomNum = 0;
 
 updateButton.addEventListener('click', generateRange);
 clearButton.addEventListener('click', clearsAll);
@@ -36,7 +42,10 @@ function generateRange() {
  var minNum = parseInt(minRange.value);
  var maxNum = parseInt(maxRange.value);
  generateNum(minNum, maxNum);
+  console.log('new generated number from new range' + randomNum)
 }
+
+// make sure that you can not update if both inputs are not there
 
 function updateScore() {
        playOneScore.innerText = guessOne.value;
@@ -58,6 +67,7 @@ currentGuessNameTwo.innerText = nameTwo.value;
 }
 
 function resetGame(){
+  // console.log(generateNum(min, max))
   lowestNumber.innerText = 1;
 	highestNumber.innerText = 100;
 	minRange.value = '';
@@ -70,12 +80,14 @@ function resetGame(){
 	nameTwo.value = '';
 	guessOne.value = '';
 	guessTwo.value = ''; 
-	generateNum();
+	generateNum(minNums, maxNums);
+  console.log(randomNum)
 }
 
 
-function generateNum(min = 1, max = 100) {
-	return Math.floor(Math.random() * max) + min;
+function generateNum(min, max) {
+	var newNum = Math.floor(Math.random() * max) + min ;
+  randomNum = newNum
 }
 
 function clearsAll() {
@@ -97,19 +109,26 @@ function disableClear() {
   guessOne.value,
   guessTwo.value
  ]
+}
 
 
- for (i = 0; i < inputFields.length; i++){
-  if (inputFields[i] === '') {
-    console.log(inputFields[i])
-    clearButton.disable === true;
-    // else ()
-  } else {
-    clearButton.disable === false;
-  }
+ // for (i = 0; i < inputFields.length; i++){
+ //  if (inputFields[i] === '') {
+ //    console.log(inputFields[i])
+ //    clearButton.disable === true;
+ //    // else ()
+ //  } else {
+ //    clearButton.disable === false;
+ //  }
 
-  }
- }
+ //  }
+ // }
+
+ // if (guess1.value < generateNum()){
+ //    return "That's too low"
+ // } else {
+
+ // }
 
 // if inputFields[i].length !==0 {
 //   this.disabled = false;
