@@ -24,6 +24,12 @@ var resetButton = document.querySelector('.reset-game');
 var clearButton = document.querySelector('.clear-game');
 var form = document.getElementById('playerForm');
 
+var lowHighResultOne = document.querySelector('.player-1-high-low')
+// var lowHighResultTwo = document.querySelector()
+
+var minNums = 1;
+var maxNums = 100;
+var randomNum = 0;
 
 resetButton.disabled = true;
 clearButton.disabled = true;
@@ -53,16 +59,16 @@ guessTwo.addEventListener('keyup', function() {
   enablingButtons(guessTwo.value);
 });
 
-
-
-
 function generateRange() {
  lowestNumber.innerText = minRange.value;
  highestNumber.innerText = maxRange.value;
  var minNum = parseInt(minRange.value);
  var maxNum = parseInt(maxRange.value);
  generateNum(minNum, maxNum);
+  console.log('new generated number from new range' + randomNum)
 }
+
+// make sure that you can not update if both inputs are not there
 
 function updateScore() {
        playOneScore.innerText = guessOne.value;
@@ -83,6 +89,7 @@ currentGuessNameTwo.innerText = nameTwo.value;
 }
 
 function resetGame(){
+  // console.log(generateNum(min, max))
   lowestNumber.innerText = 1;
 	highestNumber.innerText = 100;
 	minRange.value = '';
@@ -97,13 +104,13 @@ function resetGame(){
 	guessTwo.value = ''; 
   resetButton.disabled = true;
   clearButton.disabled = true;
-	generateNum();
+	generateNum(minNums, maxNums);
+  console.log(randomNum)
 }
 
-
-function generateNum(min = 1, max = 100) {
-	return Math.floor(Math.random() * max) + min;
-
+function generateNum(min, max) {
+	var newNum = Math.floor(Math.random() * max) + min ;
+  randomNum = newNum
 }
 
 function clearsAll() {
@@ -114,7 +121,6 @@ function clearsAll() {
     guessOne.value="";
     guessTwo.value="";
     clearButton.disabled = true;
-
 }
 
 function enablingButtons(value) {
