@@ -62,9 +62,9 @@ guessTwo.addEventListener('keyup', function() {
 function generateRange() {
  lowestNumber.innerText = minRange.value;
  highestNumber.innerText = maxRange.value;
- var minNum = parseInt(minRange.value);
- var maxNum = parseInt(maxRange.value);
- generateNum(minNum, maxNum);
+ minNums = parseInt(minRange.value);
+ maxNums = parseInt(maxRange.value);
+ generateNum(minNums, maxNums);
   console.log('new generated number from new range' + randomNum)
 }
 
@@ -124,7 +124,6 @@ function clearsAll() {
 }
 
 function enablingButtons(value) {
-    //When there is typing, or there is text in any input field, the button will be enabled
     console.log(value);
 
     if (value !== "") {
