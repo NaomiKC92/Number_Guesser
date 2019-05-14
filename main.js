@@ -24,8 +24,8 @@ var resetButton = document.querySelector('.reset-game');
 var clearButton = document.querySelector('.clear-game');
 var form = document.getElementById('playerForm');
 
-var lowHighResultOne = document.querySelector('.player-1-high-low')
-// var lowHighResultTwo = document.querySelector()
+var lowHighResultOne = document.querySelector('.play-1-high-low');
+var lowHighResultTwo = document.querySelector('.play-2-high-low');
 
 var minNums = 1;
 var maxNums = 100;
@@ -73,12 +73,14 @@ function generateRange() {
 function updateScore() {
        playOneScore.innerText = guessOne.value;
        playTwoScore.innerText = guessTwo.value;
-   }
+}
+
 function submitAction(e) {
        e.preventDefault();
        updateScore();
        updateNames();
        console.log('Testing');
+       gamePlay();
 }
 
 function updateNames(event){
@@ -132,6 +134,22 @@ function enablingButtons(value) {
       resetButton.disabled = false;
     }
   }
+
+function gamePlay() {
+  debugger;
+    console.log('gameplay')
+    var parseGuess = parseInt(guessOne.value);
+    if (parseGuess < randomNum){
+      console.log(lowHighResultOne)
+    lowHighResultOne.innerHTML = "That\'s is too low";
+  } else if (parseGuess > randomNum){
+    lowHighResultOne.innerHTML = "That is too high"
+  } else{
+    lowHighResultOne.innerHTML = "BOOM!"
+  }
+}
+
+
 
 
   
