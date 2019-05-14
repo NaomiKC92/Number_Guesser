@@ -25,13 +25,36 @@ var clearButton = document.querySelector('.clear-game');
 var form = document.getElementById('playerForm');
 
 
+resetButton.disabled = true;
+clearButton.disabled = true;
+
+
 updateButton.addEventListener('click', generateRange);
 clearButton.addEventListener('click', clearsAll);
 submitGuess.addEventListener('click', submitAction);
 resetButton.addEventListener('click', resetGame);
 
-clearButton.disabled = true;
-resetButton.disabled = true;
+minRange.addEventListener('keyup', function() {
+  enablingButtons(minRange.value);
+});
+maxRange.addEventListener('keyup', function() {
+  enablingButtons(maxRange.value);
+});
+nameOne.addEventListener('keyup', function() {
+  enablingButtons(nameOne.value);
+});
+nameTwo.addEventListener('keyup', function() {
+  enablingButtons(nameTwo.value);
+});
+guessOne.addEventListener('keyup', function() {
+  enablingButtons(guessOne.value);
+});
+guessTwo.addEventListener('keyup', function() {
+  enablingButtons(guessTwo.value);
+});
+
+
+
 
 function generateRange() {
  lowestNumber.innerText = minRange.value;
@@ -49,8 +72,6 @@ function submitAction(e) {
        e.preventDefault();
        updateScore();
        updateNames();
-       disableClearBtn();
-       disableResetBtn();
        console.log('Testing');
 }
 
@@ -74,12 +95,15 @@ function resetGame(){
 	nameTwo.value = '';
 	guessOne.value = '';
 	guessTwo.value = ''; 
+  resetButton.disabled = true;
+  clearButton.disabled = true;
 	generateNum();
 }
 
 
 function generateNum(min = 1, max = 100) {
 	return Math.floor(Math.random() * max) + min;
+
 }
 
 function clearsAll() {
@@ -89,75 +113,20 @@ function clearsAll() {
     nameTwo.value="";
     guessOne.value="";
     guessTwo.value="";
+    clearButton.disabled = true;
 
 }
 
-function disableClearBtn(name) {
-  if (name.value === '') {
-      clearButton.disabled = true;
-  } else { clearButton.disabled = false;}
-  }
+function enablingButtons(value) {
+    //When there is typing, or there is text in any input field, the button will be enabled
+    console.log(value);
 
-  function disableResetBtn(name) {
-  if (name.value === '') {
-      resetButton.disabled = true;
-  } else { resetButton.disabled = false;}
+    if (value !== "") {
+
+      clearButton.disabled = false;
+      resetButton.disabled = false;
+    }
   }
 
 
   
-
-
-
-
-
- // for (i = 0; i < inputFields.length; i++){
- //  if (inputFields[i] === '') {
- //    console.log(inputFields[i])
- //    clearButton.disable === true;
- //  } else {
- //    clearButton.disable === false;
- //  }
-
- //  }
- // }
-
-// if inputFields[i].length !==0 {
-//   this.disabled = false;
-// }
-// else {
-//   this.disabled = true;
-// }
-
-// }
-
-
-
-// function disableClear() {
-//   var inputFields = [
-//   minRange.value,
-//   maxRange.value,
-//   nameOne.value,
-//   nameTwo.value,
-//   guess1.value,
-//   guess2.value
-//  ]
-//  let count = 0;
-//  for(let i = 0; i < inputFields.length; i++){
-//   if (inputFields[i].length !== 0) {
-//     count += 1;
-//   }
-//  }
-//   if (count === 6) {
-//     //turn "disabled attribute of 'button' to false;
-//     // remove disabled css class.
-//     console.log('enable reset');
-//   }
-// }
-
-
-
-
-
-
-
