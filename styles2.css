@@ -1,10 +1,9 @@
 * {
-	box-sizing: border-box;
-	/*border: 1px solid black;*/
-	margin:0;
-	font-weight: 300;
-	font-family: 'Open Sans', sans-serif;
-	color:#6E6E6E;
+    box-sizing: border-box;
+    margin:0;
+    font-weight: 300;
+    font-family: 'Open Sans', sans-serif;
+    color:#6E6E6E;
 }
 
 header {
@@ -21,8 +20,8 @@ main {
 h1 {
 	color:#dd1972;
 	font-weight: 300;
- font-size: 72px;
- margin:0;
+  font-size: 72px;
+  margin:0;
 }
 
 .num {
@@ -32,7 +31,7 @@ h1 {
 
 h2 {
 	font-weight: 300;
-	color:papayawhip;
+/* 	color:papayawhip; */
 	font-size: 25px;
 	margin:0;
 }
@@ -43,7 +42,6 @@ h3 {
 	font-size:25px;
 }
 
-
 button {
 	border-radius: 20px;
 	background-color: #6E6E6E;
@@ -52,7 +50,6 @@ button {
 	font-weight:600;
 	width:200px;
 	height:42px;
-	
 }
 
 input {
@@ -81,7 +78,6 @@ p {
 	width:50%;
 	border-right:1px solid #6e6e6e;
 	background-color:#f7f7f7;
-	/*height:;*/
 }
 
 .set-range {
@@ -90,7 +86,6 @@ p {
 	border:2px solid #d0d2d3;
 	background-color:#ffffff;
 }
-
 
 .update-btn {
 	width:100px;
@@ -142,11 +137,8 @@ legend {
 }
 
 .play-1-high-low,.play-2-high-low {
-	font-size:25px;
-    
+	font-size:25px;    
 }
-
-
 
 .total-score {
     display:flex;
@@ -163,21 +155,6 @@ legend {
  flex:1;
 }
 
-.total-score {
-	display:flex;
-  justify-content: space-around;
-  padding:5px;
-  text-align:center;
-}
-
-.mini-right-box,
- .mini-left-box {
-	display: flex;
-  flex-direction: column;
-  justify-content: flex-end;
-  flex:1;
-}
-
 .middle-line {
     display:flex;
     border:1px solid grey;
@@ -187,43 +164,9 @@ legend {
     display:flex;
     flex-direction:column;
     width:50%;
-
     background-color:#D0D2D3;
-
 }
 
-.vs {
-    font-size: 15px;
-    margin:15px;
-}
-
-.winner-announces {
-    font-size:40px;
-    font-weight:800;
-    margin-top:20px;
-    
-}
-
-.middle-line {
-	display:flex;
-	border:1px solid grey;
-}
-
-
-.actual-winner {
-    font-size:40px;
-    margin-top:0;
-    margin-bottom: 20px;
-}
->>>>>>> 9c64d838c51f3014699aca08eaac65a55c7bee2e
-
-.result-names {
-    text-align:center;
-    font-weight:700;
-    margin-bottom:10px;
-}
-
-<<<<<<< HEAD
 .vs {
 	font-size: 15px;
 	margin:15px;
@@ -233,8 +176,6 @@ legend {
 	font-size:40px;
 	font-weight:800;
 	margin-top:20px;
-	
-
 }
 
 .actual-winner {
@@ -250,24 +191,6 @@ legend {
 }
 
 .winners {
-	margin:19px 19px;
-	background-color: #ffffff;
-	border:2px solid #d0d2d3;
-	padding:10px;
-}
-
-.the-winner {
-	border-top:2px solid grey;
-	text-align:center;
-}
-
-.guess-and-time {
-	display:flex;
-justify-content:space-between;
-	border-top:2px solid grey;
-	padding-top:6px;
-=======
-.winners {
     margin:19px 19px;
     background-color: #ffffff;
     border:2px solid #d0d2d3;
@@ -281,32 +204,16 @@ justify-content:space-between;
 
 .guess-and-time {
     display:flex;
-justify-content:space-between;
+    justify-content:space-between;
     border-top:2px solid grey;
     padding-top:6px;
->>>>>>> 9c64d838c51f3014699aca08eaac65a55c7bee2e
-
 }
 
 .number-of-guesses,.time {
-<<<<<<< HEAD
-	font-weight:700;
-=======
     font-weight:700;
->>>>>>> 9c64d838c51f3014699aca08eaac65a55c7bee2e
-
 }
 
 @media screen and (max-width: 300px) {
-<<<<<<< HEAD
-  header {
-    background: magenta;
-  }
-
-  .left-section {
-  	background: blue;
-  }
-=======
  header {
    background: magenta;
  }
@@ -314,5 +221,4 @@ justify-content:space-between;
  .left-section {
      background: blue;
  }
->>>>>>> 9c64d838c51f3014699aca08eaac65a55c7bee2e
 }
