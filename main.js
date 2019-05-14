@@ -84,7 +84,6 @@ function resetGame(){
   console.log(randomNum)
 }
 
-
 function generateNum(min, max) {
 	var newNum = Math.floor(Math.random() * max) + min ;
   randomNum = newNum
@@ -97,7 +96,6 @@ function clearsAll() {
     nameTwo.value="";
     guessOne.value="";
     guessTwo.value="";
-
 }
 
 function disableClear() {
@@ -110,62 +108,5 @@ function disableClear() {
   guessTwo.value
  ]
 }
-
-
- // for (i = 0; i < inputFields.length; i++){
- //  if (inputFields[i] === '') {
- //    console.log(inputFields[i])
- //    clearButton.disable === true;
- //    // else ()
- //  } else {
- //    clearButton.disable === false;
- //  }
-
- //  }
- // }
-
- // if (guess1.value < generateNum()){
- //    return "That's too low"
- // } else {
-
- // }
-
-// if inputFields[i].length !==0 {
-//   this.disabled = false;
-// }
-// else {
-//   this.disabled = true;
-// }
-
-// }
-
-
-
-// function disableClear() {
-//   var inputFields = [
-//   minRange.value,
-//   maxRange.value,
-//   nameOne.value,
-//   nameTwo.value,
-//   guess1.value,
-//   guess2.value
-//  ]
-//  let count = 0;
-//  for(let i = 0; i < inputFields.length; i++){
-//   if (inputFields[i].length !== 0) {
-//     count += 1;
-//   }
-//  }
-//   if (count === 6) {
-//     //turn "disabled attribute of 'button' to false;
-//     // remove disabled css class.
-//     console.log('enable reset');
-//   }
-// }
-
-
-
-
-
 
 
