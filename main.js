@@ -31,6 +31,8 @@ var minNums = 1;
 var maxNums = 100;
 var randomNum = 0;
 
+var card = document.querySelector('.right-section')
+
 resetButton.disabled = true;
 clearButton.disabled = true;
 
@@ -79,8 +81,10 @@ function submitAction(e) {
        e.preventDefault();
        updateScore();
        updateNames();
-       console.log('Testing');
-       gamePlay();
+       // console.log('Testing');
+       gamePlayOne();
+       gamePlayTwo();
+       // popUpCard();
 }
 
 function updateNames(event){
@@ -126,8 +130,6 @@ function clearsAll() {
 }
 
 function enablingButtons(value) {
-    console.log(value);
-
     if (value !== "") {
 
       clearButton.disabled = false;
@@ -135,19 +137,52 @@ function enablingButtons(value) {
     }
   }
 
-function gamePlay() {
-  debugger;
-    console.log('gameplay')
-    var parseGuess = parseInt(guessOne.value);
-    if (parseGuess < randomNum){
+function gamePlayOne() {
+  // debugger;
+    // console.log('gameplay')
+    var parseGuessOne = parseInt(guessOne.value);
+    if (parseGuessOne < randomNum){
       console.log(lowHighResultOne)
-    lowHighResultOne.innerHTML = "That\'s is too low";
-  } else if (parseGuess > randomNum){
-    lowHighResultOne.innerHTML = "That is too high"
+    lowHighResultOne.innerText = "That\'s too low";
+  } else if (parseGuessOne > randomNum){
+    lowHighResultOne.innerText = "That\'s too high"
   } else{
-    lowHighResultOne.innerHTML = "BOOM!"
+    lowHighResultOne.innerText = "BOOM!";
+    console.log(currentGuessNameOne.innerText)
+    popUpCard(currentGuessNameOne.innerText);
   }
 }
+
+function gamePlayTwo() {
+  var parseGuessTwo = parseInt(guessTwo.value);
+  if (parseGuessTwo < randomNum){
+    lowHighResultTwo.innerText = "That\'s too low"
+  } else if (parseGuessTwo > randomNum){
+    lowHighResultTwo.innerText = "That\'s too high"
+  } else{
+    lowHighResultTwo.innerText = "BOOM!";
+    console.log(currentGuessNameTwo.innerText);
+    popUpCard(currentGuessNameTwo.innerText);
+  }
+}
+
+function popUpCard(winner){
+  card.insertAdjacentHTML('afterbegin', `<section class="winners">
+        <p class="result-names"> ${nameOne.value}<span class="vs">VS</span>${nameTwo.value}</p>
+        <section class="the-winner">
+          <p class="winner-announces">${winner}</p>
+          <p class="actual-winner">WINNER</p>
+        </section>
+        <section class="guess-and-time">
+          <p><span class="number-of-guesses">47</span> GUESSES</p>
+          <p><span class="time">1.35 MINUTES</span></p>
+          <p>IMG</p>
+        </section>
+      </section>`)
+
+}
+
+
 
 
 
