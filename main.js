@@ -81,6 +81,9 @@ function submitAction(e) {
        updateNames();
        console.log('Testing');
        gamePlay();
+       stayWithinMin();
+       stayWithinMax();
+
 }
 
 function updateNames(event){
@@ -136,7 +139,6 @@ function enablingButtons(value) {
   }
 
 function gamePlay() {
-  debugger;
     console.log('gameplay')
     var parseGuess = parseInt(guessOne.value);
     if (parseGuess < randomNum){
@@ -148,6 +150,19 @@ function gamePlay() {
     lowHighResultOne.innerHTML = "BOOM!"
   }
 }
+
+function stayWithinMin() {
+  if (guessOne.value < minNums || guessTwo.value < minNums) {
+    submitButton.diabled = true;
+    console.log('Number not in minimum range, please try again!')
+}};
+
+
+function stayWithinMax() {
+if (guessOne.value > maxNums || guessTwo.value > maxNums) {
+   console.log('Number not in maximum range, please try again!')
+}};
+
 
 
 
