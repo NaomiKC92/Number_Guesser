@@ -81,10 +81,13 @@ function submitAction(e) {
        e.preventDefault();
        updateScore();
        updateNames();
-       // console.log('Testing');
+       console.log('Testing');
+       stayWithinMin();
+       stayWithinMax();
        gamePlayOne();
        gamePlayTwo();
        // popUpCard();
+
 }
 
 function updateNames(event){
@@ -166,6 +169,17 @@ function gamePlayTwo() {
   }
 }
 
+function stayWithinMin() {
+  if (guessOne.value < minNums || guessTwo.value < minNums) {
+    submitButton.diabled = true;
+    console.log('Number not in minimum range, please try again!')
+}};
+
+function stayWithinMax() {
+if (guessOne.value > maxNums || guessTwo.value > maxNums) {
+   console.log('Number not in maximum range, please try again!')
+}};
+
 function popUpCard(winner){
   card.insertAdjacentHTML('afterbegin', `<section class="winners">
         <p class="result-names"> ${nameOne.value}<span class="vs">VS</span>${nameTwo.value}</p>
@@ -179,8 +193,8 @@ function popUpCard(winner){
           <p>IMG</p>
         </section>
       </section>`)
-
 }
+
 
 
 
