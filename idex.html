@@ -9,7 +9,7 @@
 <body>
   <header>
     <h1><span class="num">NUMBER</span>GUESSER</h1>
-    <div class="head-para">
+    <div id="head-paragraph">
       <div class= "sideline"></div>
         <h2>ULTIMATE CHALLENGER EDITION</h2>
       <div class="sideline"></div>
@@ -20,29 +20,43 @@
       <div class="set-range">
         <h3 id="section-1-title">Set Range</h3>
         <form class="ranges">
-          <label>Min Range<input type="text" class="min-range-input"></label>
-          <label>Max Range<input type="text" class="max-range-input"></label>
-          <button type="button" class= "update-btn">UPDATE</button>
+          <div class = "min-input-box">
+           <label>Min Range</label>
+           <input type="number" class="min-range-input">
+          </div>
+          <div class = "max-output-box">
+           <label>Max Range</label>
+           <input type="number" class="max-range-input">
+          </div>
+        <button type="button" class= "update-btn">UPDATE</button>
         </form>
       </div>
       <section class="challengers">
         <p>The Current Range is <span class="lowest-number">1</span> to <span class="highest-number">100</span></p>
         <article class="opponent-1">
+          <legend>Challenger 1</legend>
           <form name="challenger-1">
-            <legend>Challenger 1</legend>
+          <div class = "input-box-1">
             <label>Name</label>
             <input type="text" class="challenger-1-name">
+          </div>
+          <div class = "input-box-2">
             <label>Guess</label>
             <input type="number" class="challenger-1-guess">
+          </div>
           </form>
         </article>
         <article class="opponenet-2">
+           <legend>Challenger 2</legend>
           <form name="challenger-2">
-            <legend>Challenger 2</legend>
+          <div class = "input-box-3">
             <label>Name</label>
             <input type="text" class="challenger-2-name">
+          </div>
+          <div class = "input-box-4">
             <label>Guess</label>
             <input type="number" class="challenger-2-guess">
+          </div>
           </form>
         </article>
         <article class="buttons">
