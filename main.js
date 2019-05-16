@@ -4,34 +4,26 @@ var maxRange = document.querySelector('.max-range-input');
 var lowestNumber = document.querySelector('.lowest-number');
 var highestNumber = document.querySelector('.highest-number');
 
-var updateButton = document.querySelector('.update-btn');
-
 var nameOne = document.querySelector('.challenger-1-name');
 var nameTwo = document.querySelector('.challenger-2-name');
-
 var currentGuessNameOne = document.querySelector('.name-1');
 var currentGuessNameTwo = document.querySelector('.name-2');
-
+var updateButton = document.querySelector('.update-btn');
 var submitGuess = document.querySelector('.submit-guess');
-
-var guessOne = document.querySelector('.challenger-1-guess');
-var guessTwo = document.querySelector('.challenger-2-guess');
-
-var playOneScore = document.querySelector('.play-1-guess');
-var playTwoScore = document.querySelector('.play-2-guess');
-
 var resetButton = document.querySelector('.reset-game');
 var clearButton = document.querySelector('.clear-game');
-var form = document.getElementById('playerForm');
-
+var guessOne = document.querySelector('.challenger-1-guess');
+var guessTwo = document.querySelector('.challenger-2-guess');
+var playOneScore = document.querySelector('.play-1-guess');
+var playTwoScore = document.querySelector('.play-2-guess');
 var lowHighResultOne = document.querySelector('.play-1-high-low');
 var lowHighResultTwo = document.querySelector('.play-2-high-low');
+var form = document.getElementById('playerForm');
+var resultCard = document.querySelector('.right-section')
 
 var minNums = 1;
 var maxNums = 100;
 var randomNum = 0;
-
-var card = document.querySelector('.right-section')
 
 resetButton.disabled = true;
 clearButton.disabled = true;
@@ -62,23 +54,21 @@ guessTwo.addEventListener('keyup', function() {
 });
 
 function generateRange() {
- lowestNumber.innerText = minRange.value;
- highestNumber.innerText = maxRange.value;
- minNums = parseInt(minRange.value);
- maxNums = parseInt(maxRange.value);
- generateNum(minNums, maxNums);
+  lowestNumber.innerText = minRange.value;
+  highestNumber.innerText = maxRange.value;
+  minNums = parseInt(minRange.value);
+  maxNums = parseInt(maxRange.value);
+  generateNum(minNums, maxNums);
   console.log('new generated number from new range' + randomNum)
 }
 
-// make sure that you can not update if both inputs are not there
-
 function updateScore() {
-       playOneScore.innerText = guessOne.value;
-       playTwoScore.innerText = guessTwo.value;
+  playOneScore.innerText = guessOne.value;
+  playTwoScore.innerText = guessTwo.value;
 }
 
 function submitAction(e) {
-       e.preventDefault();
+  e.preventDefault();
        updateScore();
        updateNames();
        console.log('Testing');
@@ -87,18 +77,14 @@ function submitAction(e) {
        gamePlayOne();
        gamePlayTwo();
        // popUpCard();
-
 }
 
-function updateNames(event){
-
-currentGuessNameOne.innerText = nameOne.value;
-currentGuessNameTwo.innerText = nameTwo.value;
-
+function updateNames(event) {
+  currentGuessNameOne.innerText = nameOne.value;
+  currentGuessNameTwo.innerText = nameTwo.value;
 }
 
-function resetGame(){
-  // console.log(generateNum(min, max))
+function resetGame() {
   lowestNumber.innerText = 1;
 	highestNumber.innerText = 100;
 	minRange.value = '';
@@ -145,6 +131,7 @@ function gamePlayOne() {
     if (parseGuessOne < randomNum){
       console.log(lowHighResultOne)
     lowHighResultOne.innerText = 'That\'s too low';
+
   } else if (parseGuessOne > randomNum){
     lowHighResultOne.innerText = 'That\'s too high'
   } else{
@@ -157,49 +144,38 @@ function gamePlayOne() {
 function gamePlayTwo() {
   var parseGuessTwo = parseInt(guessTwo.value);
   if (parseGuessTwo < randomNum){
+
     lowHighResultTwo.innerText = 'That\'s too low'
   } else if (parseGuessTwo > randomNum){
     lowHighResultTwo.innerText = 'That\'s too high'
   } else{
     lowHighResultTwo.innerText = 'BOOM!';
+
     console.log(currentGuessNameTwo.innerText);
     popUpCard(currentGuessNameTwo.innerText);
   }
 }
 
-function popUpCard(winner){
-  card.insertAdjacentHTML('afterbegin', `<section class='winners'>
-        <p class='result-names'> ${nameOne.value}<span class='vs'>VS</span>${nameTwo.value}</p>
-        <section class='the-winner'>
-          <p class='winner-announces'>${winner}</p>
-          <p class='actual-winner'>WINNER</p>
+function popUpCard(winner) {
+  resultCard.insertAdjacentHTML('afterbegin', `<section class="winners">
+        <p class="result-names"> ${nameOne.value}<span class="vs">VS</span>${nameTwo.value}</p>
+        <section class="the-winner">
+          <p class="winner-announces">${winner}</p>
+          <p class="actual-winner">WINNER</p>
         </section>
-        <section class='guess-and-time'>
-          <p><span class='number-of-guesses'>47</span> GUESSES</p>
-          <p><span class='time'>1.35 MINUTES</span></p>
-          <p>IMG</p>
+        <section class="guess-and-time">
+          <p><span class="number-of-guesses">47</span> GUESSES</p>
+          <p><span class="time">1.35 MINUTES</span></p>
+          <button class="close-card-btn">X</button>
+
         </section>
       </section>`)
 }
 
-
-// function borderColorChange() {
-//   var inputBorders = document.getElementById('.text')
-
-// }
-
-
-// function stayWithinMin() {
-//   var submitButton = document.querySelector('submit-guess')
-//   if (guessOne.value < minNums || guessTwo.value < minNums) {
-//     console.log('Number not in minimum range, please try again!')
-// }};
-
-// function stayWithinMax() {
-// if (guessOne.value > maxNums || guessTwo.value > maxNums) {
-//    console.log('Number not in maximum range, please try again!')
-// }};
-
+function closeCard() {
+  console.log("check")
+  resultCard.close();
+}
 
 
 
