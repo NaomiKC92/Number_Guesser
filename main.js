@@ -72,8 +72,8 @@ function submitAction(e) {
        updateScore();
        updateNames();
        console.log('Testing');
-       stayWithinMin();
-       stayWithinMax();
+       // stayWithinMin();
+       // stayWithinMax();
        gamePlayOne();
        gamePlayTwo();
        // popUpCard();
@@ -109,31 +109,33 @@ function generateNum(min, max) {
 }
 
 function clearsAll() {
-  minRange.value="";
-  maxRange.value="";
-  nameOne.value="";
-  nameTwo.value="";
-  guessOne.value="";
-  guessTwo.value="";
-  clearButton.disabled = true;
+    minRange.value='';
+    maxRange.value='';
+    nameOne.value='';
+    nameTwo.value='';
+    guessOne.value='';
+    guessTwo.value='';
+    clearButton.disabled = true;
 }
 
 function enablingButtons(value) {
-  if (value !== "") {
-  clearButton.disabled = false;
-  resetButton.disabled = false;
+    if (value !== '') {
+
+      clearButton.disabled = false;
+      resetButton.disabled = false;
+    }
   }
-}
 
 function gamePlayOne() {
-  var parseGuessOne = parseInt(guessOne.value);
-  if (parseGuessOne < randomNum){
-    console.log(lowHighResultOne)
-    lowHighResultOne.innerText = "That\'s too low";
+    var parseGuessOne = parseInt(guessOne.value);
+    if (parseGuessOne < randomNum){
+      console.log(lowHighResultOne)
+    lowHighResultOne.innerText = 'That\'s too low';
+
   } else if (parseGuessOne > randomNum){
-    lowHighResultOne.innerText = "That\'s too high"
+    lowHighResultOne.innerText = 'That\'s too high'
   } else{
-    lowHighResultOne.innerText = "BOOM!";
+    lowHighResultOne.innerText = 'BOOM!';
     console.log(currentGuessNameOne.innerText)
     popUpCard(currentGuessNameOne.innerText);
   }
@@ -142,26 +144,17 @@ function gamePlayOne() {
 function gamePlayTwo() {
   var parseGuessTwo = parseInt(guessTwo.value);
   if (parseGuessTwo < randomNum){
-    lowHighResultTwo.innerText = "That\'s too low"
-  }  else if (parseGuessTwo > randomNum){
-    lowHighResultTwo.innerText = "That\'s too high"
-  } else {
-    lowHighResultTwo.innerText = "BOOM!";
+
+    lowHighResultTwo.innerText = 'That\'s too low'
+  } else if (parseGuessTwo > randomNum){
+    lowHighResultTwo.innerText = 'That\'s too high'
+  } else{
+    lowHighResultTwo.innerText = 'BOOM!';
+
     console.log(currentGuessNameTwo.innerText);
     popUpCard(currentGuessNameTwo.innerText);
   }
 }
-
-function stayWithinMin() {
-  if (guessOne.value < minNums || guessTwo.value < minNums) {
-    submitButton.diabled = true;
-    console.log('Number not in minimum range, please try again!')
-}};
-
-function stayWithinMax() {
-if (guessOne.value > maxNums || guessTwo.value > maxNums) {
-   console.log('Number not in maximum range, please try again!')
-}};
 
 function popUpCard(winner) {
   resultCard.insertAdjacentHTML('afterbegin', `<section class="winners">
@@ -174,6 +167,7 @@ function popUpCard(winner) {
           <p><span class="number-of-guesses">47</span> GUESSES</p>
           <p><span class="time">1.35 MINUTES</span></p>
           <button class="close-card-btn">X</button>
+
         </section>
       </section>`)
 }

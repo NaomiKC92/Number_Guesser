@@ -64,8 +64,7 @@ input {
 	height: 45px;
 	width: 214px;
 	font-size: 25px;
-	border: 2px solid #d0d2d3
-}
+	border: 1px solid #d0d2d3;
 
 label {
 	display: block;
@@ -78,13 +77,11 @@ p {
 	font-size: 20px;
 }
 
-.challengers {
-	margin: 2px 19px;
-	padding: 10px;
-	border: 2px solid #d0d2d3;
-	background-color: #ffffff;
-	height: 445px;
-}	
+ .challengers {
+	margin:2px 19px;
+	padding:10px;
+	border:2px solid #d0d2d3;
+	background-color:#ffffff;
 
 .challenger-1-name,
 .challenger-2-name {
